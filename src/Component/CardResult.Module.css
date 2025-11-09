@@ -188,3 +188,38 @@ svg{
       border-radius: 50%;
     }
 }
+
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+    .personal-information,
+    .grid-1,
+    .grid-2,
+    .medical-history .container-med,
+    .sport,
+    .registro-alimentario {
+        display: block; /* todo apilado */
+    }
+
+    input, textarea, select, label {
+        width: 100%; /* ocupan todo el ancho */
+        margin-bottom: 10px; /* separacion entre campos */
+    }
+
+    .blood-analisis div,
+    .recent-studies div,
+    .suplementation div {
+        display: flex;
+        flex-direction: row; /* radios alineados horizontal */
+        gap: 10px;
+    }
+
+    .button-send {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .title-form h2 {
+        font-size: 1.2rem; /* ajustar tamaño títulos */
+    }
+}
