@@ -11,13 +11,30 @@ const Searcher = () => {
         setQuery(e.target.value)
     }
 
-    const fetchResults = async () =>{
+    const fetchResults = async () => {
         if (!query.trim()) return;
-        fetch(`https://localhost:7137/search?dni=${query}`)
-        .then(res => res.json())
-        .then(data => setResults(data))
-        .catch(console.error);
-    }
+
+        try {
+            const res = await fetch(`https://bullionless-solange-tinglingly.ngrok-free.dev/search?dni=${query}`, {
+                headers: {
+                    "ngrok-skip-browser-warning": "true",
+                },
+            });
+
+            if (!res.ok) {
+            const text = await res.text();
+            console.error("Respuesta no OK:", text);
+            return;
+            }
+
+            const data = await res.json();
+            setResults(data);
+        } catch (err) {
+            console.error("Error al hacer fetch:", err);
+        }
+    };
+
+
     useEffect( () => {
        fetchResults()
     }, [query] )

@@ -6,17 +6,18 @@ const CardResult = ({ result ,onRefresh}) => {
 
     const [selectedCard, setSelectedCard] = useState(null);
     const [openModalDelete, setopenModalDelete] = useState(false);
-    let idTodeleted = 0;
+    const [idTodeleted, setidTodeleted] = useState(0);
     const handleGeneratePdf = async (id) => {
         if (!id) {
         alert("Debe seleccionar un historial válido");
         return;
         }
         // Llamada al backend que genera el PDF
-        const response = await fetch(`https://localhost:7137/pdf/${id}`, {
+        const response = await fetch(`https://bullionless-solange-tinglingly.ngrok-free.dev/pdf/${id}`, {
             method: "GET",
             headers: {
-            "Accept": "application/pdf"
+            "Accept": "application/pdf",
+            "ngrok-skip-browser-warning": "true",
             }
         });
 
@@ -35,8 +36,11 @@ const CardResult = ({ result ,onRefresh}) => {
     }
     
     const handleDelete = async (id) => {
-          const response = await fetch(`https://localhost:7137/delete/${id}`, {
+          const response = await fetch(`https://bullionless-solange-tinglingly.ngrok-free.dev/delete/${id}`, {
             method: "DELETE",
+            headers: {
+                "ngrok-skip-browser-warning": "true",
+            },
         });
 
         if (!response.ok) {
@@ -44,6 +48,7 @@ const CardResult = ({ result ,onRefresh}) => {
         }else{
             await onRefresh();
             alert("Registro Eliminado Exitosamente")
+            closeModalDeleted();
         }
     }
 
@@ -53,7 +58,9 @@ const CardResult = ({ result ,onRefresh}) => {
 
     function openModalDeleted(id){
         setopenModalDelete(true);
-        idTodeleted = id;
+
+        console.log(id);
+        setidTodeleted(id);
     }
 
     function closeModalDeleted(){

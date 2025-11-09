@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './form.Module.css';
+import './Form.Module.css';
 
 const Form = () => {
 
@@ -13,10 +13,11 @@ const Form = () => {
     const sendForm = async (event) =>{
         event.preventDefault();
         try{
-            const response = await fetch('https://localhost:7137/createUser', {
+            const response = await fetch('https://bullionless-solange-tinglingly.ngrok-free.dev/createUser', {
                 method: 'POST',
                 headers: {
                     "Content-type": "application/json",
+                    "ngrok-skip-browser-warning": "true",
                 },
                 body: JSON.stringify(formData),
             });
