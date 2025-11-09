@@ -1,4 +1,4 @@
-import './header.Module.css';
+import './Header.Module.css';
 import imgLogo from '../imagenes/Logo.png';
 
 const Header = () =>{
