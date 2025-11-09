@@ -1,0 +1,33 @@
+
+.header-container{
+    background-color: var(--background-color-header);
+    color: white;
+    height: 25vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-bottom: 100px;
+    align-items: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    p{
+        font-size: 1.5rem;
+    }
+}
+
+img{
+    content: fit-content;
+    height: 30vh;
+    border-radius:  0 0 25%;
+}

@@ -1,0 +1,15 @@
+:root{
+    --background-color-header: #004d74;
+    --font-family: "Ubuntu", sans-serif;
+    --color-title:white;
+}
+
+.root{
+    background-color: white;
+    margin: 0;
+    padding: auto;
+}
+body{
+    all: unset;
+    font-family: var(--font-family);
+}
