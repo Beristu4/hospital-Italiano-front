@@ -96,7 +96,7 @@ const Form = () => {
                             onChange={handleChange}
                             required
                             />
-                            <label className="form-dni" htmlFor="dni">Dni:</label>
+                            <label className="form-dni" htmlFor="dni">DNI:</label>
                             <input 
                             type="text" 
                             placeholder="41882909"
@@ -125,7 +125,7 @@ const Form = () => {
                             onChange={handleChange}
                             required
                             />
-                            <label className="form-telephone" htmlFor="telephone">Telefono:</label>
+                            <label className="form-telephone" htmlFor="telephone">Teléfono:</label>
                             <input 
                             type="text" 
                             placeholder="261378899"
@@ -140,7 +140,7 @@ const Form = () => {
                         <h2 className="form-motive">Motivo</h2>
                             <textarea 
                             type="area" 
-                            placeholder="Me duele la espalda"
+                            placeholder="Aumento de masa muscular"
                             name="motive"
                             value={formData.motive}
                             onChange={handleChange}
@@ -152,7 +152,7 @@ const Form = () => {
                             <h2>Historial Medico</h2>
                         </div>
                         <div className="container-med">
-                            <label className="form-medicalHistory" htmlFor="medicalHistory">Antecedentes Patologicos</label>
+                            <label className="form-medicalHistory" htmlFor="medicalHistory">Antecedentes Patológicos</label>
                             <textarea 
                             type="text" 
                             placeholder="Diabetes, hipotiroidismo,etc"
@@ -163,7 +163,7 @@ const Form = () => {
                             />
                             <div className="blood-analisis">
                                 <div>
-                                    <label className="form-bloodAnalysis" htmlFor="bloodAnalysis">Analisis de Sangre</label>
+                                    <label className="form-bloodAnalysis" htmlFor="bloodAnalysis">Análisis de Sangre</label>
                                 </div>
                                 <div>
                                     <label>
@@ -217,10 +217,10 @@ const Form = () => {
                                     </label>
                                 </div>
                             </div>      
-                            <label className="form-medication" htmlFor="medication">Medicacion</label>
+                            <label className="form-medication" htmlFor="medication">Medicación</label>
                             <textarea 
                             type="text" 
-                            placeholder="Medicacion"
+                            placeholder="Levotiroxina"
                             name="medication"
                             value={formData.medication}
                             onChange={handleChange}
@@ -259,7 +259,7 @@ const Form = () => {
                         />
                         <div className="suplementation">
                             <div>
-                                <label className="form-suplementation" htmlFor="suplementation">Suplementacion</label>
+                                <label className="form-suplementation" htmlFor="suplementation">Suplementación</label>
                             </div>
                             <div>
                                 <label>
@@ -289,7 +289,7 @@ const Form = () => {
                             <h2>Calendario de entrenamiento:</h2>
                             <textarea 
                             type="text" 
-                            placeholder="Colocar dias y horarios de entrenamiento, espcificando si entrena un solo turno o doble turno
+                            placeholder="Colocar días y horarios de entrenamiento, especificando si entrena un solo turno o doble turno
                             Ejemplo: 
                             Lunes: 14:30 a 16:30
 
@@ -308,16 +308,16 @@ const Form = () => {
                         <label className="form-breackfast" htmlFor="breackfast">Desayuno</label>
                         <textarea 
                         type="text" 
-                        placeholder="Ejemplo de desayuno , espcificar cantidades"
+                        placeholder="Ejemplo de desayuno , especificar cantidades"
                         name="breackfast"
                         value={formData.breackfast}
                         onChange={handleChange}
                         required
                         />
-                        <label className="form-breackfastSnack" htmlFor="breackfastSnack">Colacion despues del Desayuno</label>
+                        <label className="form-breackfastSnack" htmlFor="breackfastSnack">Colación de media mañana</label>
                         <textarea 
                         type="text" 
-                        placeholder="Ejemplo de colcacion del desayuno , espcificar cantidades"
+                        placeholder="Ejemplo de colcación del desayuno , especificar cantidades"
                         name="breackfastSnack"
                         value={formData.breackfastSnack}
                         onChange={handleChange}
@@ -326,34 +326,34 @@ const Form = () => {
                         <label className="form-lunch" htmlFor="lunch">Almuerzo</label>
                         <textarea 
                         type="text" 
-                        placeholder="Ejemplo de almuerzo , espcificar cantidades"
+                        placeholder="Ejemplo de almuerzo , especificar cantidades"
                         name="lunch"
                         value={formData.lunch}
                         onChange={handleChange}
                         required
                         />
-                        <label className="form-lunchSnack" htmlFor="lunchSnack">Colacion despues del Almuerzo</label>
+                        {/* <label className="form-lunchSnack" htmlFor="lunchSnack">Colación despues del Almuerzo</label>
                         <textarea 
                         type="text" 
-                        placeholder="Ejemplo de almuerzo , espcificar cantidades"
+                        placeholder="Ejemplo de almuerzo , especificar cantidades"
                         name="lunchSnack"
                         value={formData.lunchSnack}
                         onChange={handleChange}
                         required
-                        />
+                        /> */}
                         <label className="form-mid" htmlFor="mid">Media tarde</label>
                         <textarea 
                         type="text" 
-                        placeholder="Ejemplo de Media Tarde , espcificar cantidades"
+                        placeholder="Ejemplo de Media Tarde , especificar cantidades"
                         name="mid"
                         value={formData.mid}
                         onChange={handleChange}
                         required
                         />
-                        <label className="form-midSnack" htmlFor="midSnack">Colacion despues de la Media Tarde</label>
+                        <label className="form-midSnack" htmlFor="midSnack">Colación despues de la Media Tarde</label>
                         <textarea 
                         type="text" 
-                        placeholder="Ejemplo de colacion despues de la Media Tarde , espcificar cantidades"
+                        placeholder="Ejemplo de colación despues de la Media Tarde , especificar cantidades"
                         name="midSnack"
                         value={formData.midSnack}
                         onChange={handleChange}
@@ -362,13 +362,13 @@ const Form = () => {
                         <label className="form-dinner" htmlFor="dinner">Cena</label>
                         <textarea 
                         type="text" 
-                        placeholder="Ejemplo de Cena , espcificar cantidades"
+                        placeholder="Ejemplo de Cena , especificar cantidades"
                         name="dinner"
                         value={formData.dinner}
                         onChange={handleChange}
                         required
                         />
-                        <label className="form-water" htmlFor="water">Agua</label>
+                        <label className="form-water" htmlFor="water">Consumo de agua</label>
                         <input 
                         type="text" 
                         placeholder="Ejemplo: 6 vasos , 3 litros, etc"
@@ -377,7 +377,7 @@ const Form = () => {
                         onChange={handleChange}
                         required
                         />
-                          <label className="form-allergies" htmlFor="allergies">Alergias</label>
+                          <label className="form-allergies" htmlFor="allergies">Alergia/Intolerancia alimentaria</label>
                         <input 
                         type="text" 
                         placeholder="Ejemplo: lacteos, gluten, alimentos que generan inflamacion/diarrea ,etc"
@@ -387,7 +387,6 @@ const Form = () => {
                         required
                         />
                     </div>
-                    {/* <TrainingSchedule setFormData={setFormData}/> */}
 
                 </form>
                 <div className="button-send">

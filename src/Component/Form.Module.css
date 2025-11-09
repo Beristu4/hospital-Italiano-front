@@ -312,3 +312,52 @@
         cursor: pointer;
     }
 }
+
+/* Ajuste para mobile */
+@media (max-width: 900px) {
+    .personal-information,
+    .grid-1,
+    .grid-2,
+    .medical-history .container-med,
+    .sport,
+    .motive,
+    .calendario,
+    .registro-alimentario {
+        display: block; /* todo apilado */
+        width: 100%;
+        label{
+            font-size: 15px;
+        }
+        input, textarea, select, label {
+            width: 80%; /* ocupan todo el ancho */
+            margin-bottom: 10px; /* separacion entre campos */
+        }
+    }
+
+
+    .blood-analisis div,
+    .recent-studies div,
+    .suplementation div {
+        display: flex;
+        flex-direction: row; /* radios alineados horizontal */
+        gap: 10px;
+    }
+
+    .button-send {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .title-form h2 {
+        font-size: 1rem; /* ajustar tamaño títulos */
+        width: 70%;
+    }
+
+    .calendario{
+
+        h2{
+            width: 80% !important;
+        }
+    }
+
+}
