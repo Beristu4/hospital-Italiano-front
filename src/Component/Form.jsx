@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './form.Module.css';
+import './Form.Module.css';
 
 const Form = () => {
 
