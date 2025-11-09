@@ -149,7 +149,7 @@ const Form = () => {
                     </div>
                     <div className="medical-history">
                         <div className="title-med">
-                            <h2>Historial Medico</h2>
+                            <h2>Historial Médico</h2>
                         </div>
                         <div className="container-med">
                             <label className="form-medicalHistory" htmlFor="medicalHistory">Antecedentes Patológicos</label>
