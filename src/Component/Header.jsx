@@ -1,5 +1,5 @@
 import './Header.Module.css';
-import imgLogo from '../imagenes/Logo.png';
+import imgLogo from '../Imagenes/Logo.png';
 
 const Header = () =>{
     return(
