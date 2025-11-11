@@ -3,15 +3,45 @@ import './Form.Module.css';
 
 const Form = () => {
 
+    const [error, setError] = useState([]);
+    const [openModalSend, setOpenModalSend] = useState(false);
+    const [openModalError, setopenModalError] = useState(false);
 
+    const closeModalError =() =>{
+        setopenModalError(false);
+    }
+
+    const closeModalSend =() =>{
+        setOpenModalSend(false);
+    }
     const handleChange = (event) =>{
         const { name, value } = event.target;
-        console.log(name, value);
         setFormData({ ...formData, [name]: value });
+
+        if(error[name]){
+            setError({...error, [name]: false});
+        }
     };
 
     const sendForm = async (event) =>{
         event.preventDefault();
+
+        const requiredFields = ["name", "lastName", "dni", "age", "healthInsurance", "telephone"];
+
+        let newError = {};
+
+        requiredFields.forEach(field =>{
+            if(!formData[field].trim()){
+                newError[field] = true;
+            }
+        });
+
+        if (Object.keys(newError).length > 0) {
+            setError(newError);
+            setopenModalError(true);
+            return;
+        }
+
         try{
             const response = await fetch('https://bullionless-solange-tinglingly.ngrok-free.dev/createUser', {
                 method: 'POST',
@@ -23,7 +53,7 @@ const Form = () => {
             });
 
             if(response.ok){
-                alert('Formulario enviado con exito');
+                setOpenModalSend(true);
             }else{
                 alert('Error al enviar el formulario');
             }
@@ -76,9 +106,9 @@ const Form = () => {
             <div className="title-form">
                 <form>
                     <div className="personal-information">
-                        <h2>Informacion Personal</h2>
+                        <h2>Información Personal</h2>
                         <div className="grid-1">
-                            <label className="form-name" htmlFor="Nombre">Nombre:</label>
+                            <label className="form-name" htmlFor="Nombre">Nombre*:</label>
                             <input 
                             type="text" 
                             placeholder="Agustin"
@@ -86,8 +116,9 @@ const Form = () => {
                             value={formData.name}
                             onChange={handleChange}
                             required
+                            className={error.name ? "input-error" : ""}
                             />
-                            <label className="form-lastName" htmlFor="Apellido">Apellido:</label>
+                            <label className="form-lastName" htmlFor="Apellido">Apellido*:</label>
                             <input 
                             type="text" 
                             placeholder="Benito"
@@ -95,8 +126,9 @@ const Form = () => {
                             value={formData.lastName}
                             onChange={handleChange}
                             required
+                            className={error.lastName ? "input-error" : ""}
                             />
-                            <label className="form-dni" htmlFor="dni">DNI:</label>
+                            <label className="form-dni" htmlFor="dni">DNI*:</label>
                             <input 
                             type="text" 
                             placeholder="41882909"
@@ -104,10 +136,11 @@ const Form = () => {
                             value={formData.dni}
                             onChange={handleChange}
                             required
+                            className={error.dni ? "input-error" : ""}
                             />
                         </div>
                         <div className="grid-2">
-                            <label className="form-age" htmlFor="age">Edad:</label>
+                            <label className="form-age" htmlFor="age">Edad*:</label>
                             <input 
                             type="text" 
                             placeholder="28"
@@ -115,17 +148,19 @@ const Form = () => {
                             value={formData.age}
                             onChange={handleChange}
                             required
+                            className={error.age ? "input-error" : ""}
                             />
-                            <label className="form-healthInsurance" htmlFor="healthInsurance">Obra Social:</label>
+                            <label className="form-healthInsurance" htmlFor="healthInsurance">Obra Social y N°*:</label>
                             <input 
                             type="text" 
-                            placeholder="Pami"
+                            placeholder="OSDE - 53778290"
                             name="healthInsurance"
                             value={formData.healthInsurance}
                             onChange={handleChange}
                             required
+                            className={error.healthInsurance ? "input-error" : ""}
                             />
-                            <label className="form-telephone" htmlFor="telephone">Teléfono:</label>
+                            <label className="form-telephone" htmlFor="telephone">Teléfono*:</label>
                             <input 
                             type="text" 
                             placeholder="261378899"
@@ -133,6 +168,7 @@ const Form = () => {
                             value={formData.telephone}
                             onChange={handleChange}
                             required
+                            className={error.telephone ? "input-error" : ""}
                             />
                         </div>
                     </div>
@@ -393,6 +429,30 @@ const Form = () => {
                     <button type="submit" onClick={sendForm}>Enviar</button>
                 </div>
             </div>
+
+                {openModalSend &&
+                <div className="modal-deleted-container">
+                    <div className="modal-content-deleted">
+                        <h4>Registro enviado exitosamente</h4>
+                        <div className="modal-buttons-deleted">
+                         <button onClick={() => closeModalSend()}>
+                            Cerrar
+                        </button>
+                        </div>
+                    </div>
+                </div>}
+
+                {openModalError &&
+                <div className="modal-deleted-container">
+                    <div className="modal-content-deleted">
+                        <h4>Los campos marcados en rojo son obligatorios</h4>
+                        <div className="modal-buttons-deleted">
+                        <button onClick={() => closeModalError()}>
+                            Cerrar
+                        </button>
+                        </div>
+                    </div>
+                </div>}
         </div>
     )
 }

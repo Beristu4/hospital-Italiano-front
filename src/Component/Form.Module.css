@@ -31,6 +31,11 @@
         width: 80%;
         box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.76);
     }
+
+    .input-error {
+        border: 1px solid red;
+        background-color: rgba(255, 0, 0, 0.041);
+    }
     .grid-1, .grid-2{
         display: flex;
         flex-direction: column;
@@ -361,3 +366,4 @@
     }
 
 }
+
