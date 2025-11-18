@@ -31,3 +31,38 @@ img{
     height: 30vh;
     border-radius:  0 0 25%;
 }
+
+
+@media (max-width: 900px){
+    .header-container{
+        background-color: var(--background-color-header);
+        color: white;
+        height: 20vh;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        margin-bottom: 70px;
+        align-items: center;
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        p{
+            font-size: 1rem;
+        }
+    }
+
+    img{
+        content: fit-content;
+        height: 25vh;
+        border-radius:  0 0 25%;
+    }
+}

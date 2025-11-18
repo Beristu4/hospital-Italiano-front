@@ -320,22 +320,48 @@
 
 /* Ajuste para mobile */
 @media (max-width: 900px) {
-    .personal-information,
+
     .grid-1,
     .grid-2,
-    .medical-history .container-med,
+    .personal-information{
+        display: block; /* todo apilado */
+        width: 100%;
+    }
+
+    .personal-information,
+    .container-med,
     .sport,
     .motive,
     .calendario,
     .registro-alimentario {
-        display: block; /* todo apilado */
-        width: 100%;
+
         label{
             font-size: 15px;
         }
-        input, textarea, select, label {
-            width: 80%; /* ocupan todo el ancho */
-            margin-bottom: 10px; /* separacion entre campos */
+        input[type="text"],input {
+            width: 82%; /* ocupan todo el ancho */
+            margin-top: 10px;
+        }
+
+        textarea{
+            width: 80%;
+        }
+    }
+
+    .medical-history{
+        input[type="text"], textarea,input {
+            width: 90%; /* ocupan todo el ancho */
+            margin-top: 10px;
+        }
+    }
+
+    .calendario, .registro-alimentario{
+        textarea{
+            width: 90%;
+        }
+        input[type="text"],input {
+            width: 92%; /* ocupan todo el ancho */
+            margin-top: 10px;
         }
     }
 
@@ -345,7 +371,7 @@
     .suplementation div {
         display: flex;
         flex-direction: row; /* radios alineados horizontal */
-        gap: 10px;
+        gap:8px;
     }
 
     .button-send {

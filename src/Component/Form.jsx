@@ -95,12 +95,6 @@ const Form = () => {
         allergies:'',
     });
 
-    // Detecta si todos los campos están completos
-    // useEffect(() => {
-    //     const allFilled = Object.values(formData).every(value => value.trim() !== "");
-    //     console.log(allFilled);
-    //     setIsValid(allFilled);
-    // }, [formData]);
     return(
         <div className="container">
             <div className="title-form">
@@ -368,15 +362,6 @@ const Form = () => {
                         onChange={handleChange}
                         required
                         />
-                        {/* <label className="form-lunchSnack" htmlFor="lunchSnack">Colación despues del Almuerzo</label>
-                        <textarea 
-                        type="text" 
-                        placeholder="Ejemplo de almuerzo , especificar cantidades"
-                        name="lunchSnack"
-                        value={formData.lunchSnack}
-                        onChange={handleChange}
-                        required
-                        /> */}
                         <label className="form-mid" htmlFor="mid">Media tarde</label>
                         <textarea 
                         type="text" 
